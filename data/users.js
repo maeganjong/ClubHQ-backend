@@ -1,19 +1,15 @@
 const casual = require('casual')
 
-const hash = '$2a$10$ACb1lJ75TI0gmpYEtKiQOuHTl8DuqhFZLcFS3dhoQZfzUxMghRoAK'
-
-casual.define('users', () => ({
+casual.define('user', () => ({
   id: casual.uuid,
   email: casual.email,
   firstName: casual.first_name,
   lastName: casual.last_name,
-  password: hash,
+  classYear: casual.year,
+  passHash: '$2a$10$izKhDCoMDY5MMf8.hFR4p.8guylJsT9.sn4xAlMvvSeziIr2uLbvS',
 }))
 
-const usersData = []
 
-for (let i = 0; i < 10; ++i) {
-  usersData.push(casual.users())
-}
+const usersData = []
 
 module.exports = usersData

@@ -10,10 +10,11 @@ exports.up = knex => knex.schema.createTable('users', table => {
 
   table.string('lastName').notNullable()
 
+  table.integer('classYear')
+
   table.string('email').unique().notNullable()
 
-  table.string('password').notNullable()
-
+  table.string('passHash').notNullable()
   table.timestamp('createdAt').defaultTo(knex.fn.now())
   table.timestamp('updatedAt').defaultTo(knex.fn.now())
 })
