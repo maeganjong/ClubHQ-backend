@@ -1,0 +1,7 @@
+{
+  "verbose": true,
+  "exitcrash": true,
+  "delay": "100ms",
+  "watch": ["src"],
+  "ignore": ["node_modules"]
+}
