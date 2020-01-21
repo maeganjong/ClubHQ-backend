@@ -1,0 +1,34 @@
+const { BelongsToOneRelation } = require('objection')
+const BaseModel = require('./BaseModel')
+
+class TagClub extends BaseModel {
+  static get tableName() {
+    return 'tagClubs'
+  }
+
+  static get relationMappings() {
+    const Club = require('./Club')
+    const Tag = require('./Tag')
+
+    return {
+      tag: {
+        relation: BelongsToOneRelation,
+        modelClass: Tag,
+        join: {
+          from: 'tagClubs.tagId',
+          to: 'tag.Id',
+        },
+      },
+      club: {
+        relation: BelongsToOneRelation,
+        modelClass: Club,
+        join: {
+          from: 'tagClubs.clubId',
+          to: 'club.id',
+        },
+      },
+    }
+  }
+}
+
+module.exports = TagClub
