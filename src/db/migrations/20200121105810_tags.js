@@ -1,14 +1,13 @@
 exports.up = knex => knex.schema.createTable('tags', table => {
   table
-    .uuid('tagId')
-    .references('tags_clubs.id')
+    .uuid('id')
+    .notNullable()
+    .primary()
+    .defaultTo(knex.raw('uuid_generate_v4()'))
 
   table
-    .uuid('clubId')
-    .references('clubs.id')
-
-  table.timestamp('createdAt').defaultTo(knex.fn.now())
-  table.timestamp('updatedAt').defaultTo(knex.fn.now())
+    .string('text')
+    .notNullable()
 })
 
 exports.down = knex => knex.schema.dropTableIfExists('tags')

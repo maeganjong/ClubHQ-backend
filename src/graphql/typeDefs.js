@@ -6,7 +6,7 @@ module.exports = gql`
     getClub(clubId: ID!): Club!
     searchClubs(input:String!):[Club]!
     allEvaluations: [Evaluation!]!
-    getEvaluationsofClub(clubId: ID!): [Evaluation]!
+    getEvaluationsOfClub(clubId: ID!): [Evaluation]!
     allUsers: [User!]!
     getUser(userId: ID!): User!
     searchTags(input:String!): [Tag]!
@@ -28,9 +28,9 @@ module.exports = gql`
     name: String!
     email: String
     website: String
-    size: String
+    size: Size
     summary: String!
-    comp: String!
+    comp: Competitiveness
 
   }
 
@@ -62,6 +62,17 @@ module.exports = gql`
     user: User!
     token: String!
   }
+  enum Size{
+    SMALL
+    MEDIUM
+    LARGE
+  }
+  
+  enum Competitiveness{
+    COMPETITVE
+    COMPLETION
+  }
+
   input AddClubInput{
     name: String!
     email: String
