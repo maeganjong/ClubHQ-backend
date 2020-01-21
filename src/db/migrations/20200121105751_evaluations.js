@@ -11,6 +11,10 @@ exports.up = knex => knex.schema.createTable('evaluations', table => {
     .onDelete('CASCADE')
     .onUpdate('CASCADE')
 
+  table
+    .uuid('clubId')
+    .references('clubs.id')
+
   table.string('hoursOfMeeting')
 
   table.string('hoursOfWork')
