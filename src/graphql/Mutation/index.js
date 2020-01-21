@@ -1,9 +1,10 @@
 const merge = require('lodash.merge')
-const Author = require('./Author')
-const Book = require('./Book')
-const Publisher = require('./Publisher')
-const Address = require('./Address')
+const Club = require('./Club')
+const Evaluation = require('./Evaluation')
+const Tag = require('./Tag')
+const User = require('./User')
 
-const resolvers = [Author, Book, Publisher, Address]
+
+const resolvers = [Club, Evaluation, Tag, User]
 
 module.exports = merge(...resolvers)
