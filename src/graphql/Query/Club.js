@@ -1,4 +1,5 @@
 const Club = require('../../models/Club')
+const TagClub = require('../../models/TagClub')
 
 const allClubs = async () => {
   const clubs = await Club.query()
@@ -22,11 +23,9 @@ const searchClubs = async (obj, { input }) => {
 }
 
 const getTagsOfClub = async (obj, { clubId }) => {
-  const club = await Club.query().findById(
-    clubId,
-  )
+  const club = await Club.query().findById(clubId)
 
-  const tags = club.$relatedQuery('tags')
+  const tags = club.$relatedQuery('tag')
 
   return tags
 }
@@ -41,6 +40,14 @@ const getEvaluationsOfClub = async (obj, { clubId }) => {
   return evaluations
 }
 
+const searchClubsByTag = async (obj, { tagId }) => {
+  const temp = await TagClub.query().select('clubId').where({ tagId })
+  const clubIDs = temp.map(el => el.clubId)
+  const clubs = await Club.query().whereIn('id', clubIDs)
+
+  return clubs
+}
+
 
 const resolver = {
   Query: {
@@ -49,6 +56,7 @@ const resolver = {
     searchClubs,
     getTagsOfClub,
     getEvaluationsOfClub,
+    searchClubsByTag,
   },
 }
 

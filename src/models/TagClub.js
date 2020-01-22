@@ -16,7 +16,7 @@ class TagClub extends BaseModel {
         modelClass: Tag,
         join: {
           from: 'tagClubs.tagId',
-          to: 'tags.Id',
+          to: 'tags.id',
         },
       },
       club: {

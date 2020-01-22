@@ -19,7 +19,7 @@ class Tag extends BaseModel {
             from: 'tagClubs.tagId',
             to: 'tagClubs.clubId',
           },
-          to: 'clubs.Id',
+          to: 'clubs.id',
         },
       },
 
