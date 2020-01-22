@@ -1,4 +1,4 @@
-const Author = require('../../models/Author')
+const Club = require('../../models/Club')
 const { hashPassword, comparePassword, createToken } = require('../../lib/auth')
 const addUser = async (obj, { input }) => {
   const users = await User.query().insert(input).returning('*')

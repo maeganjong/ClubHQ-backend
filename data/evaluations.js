@@ -1,21 +1,24 @@
 const casual = require('casual')
+const clubsData = require('./clubs')
+const usersData = require('./users')
 
-const hash = '$2a$10$ACb1lJ75TI0gmpYEtKiQOuHTl8DuqhFZLcFS3dhoQZfzUxMghRoAK'
 
-casual.define('evaluations', () => ({
+casual.define('evaluation', ({ clubId, userId }) => ({
   id: casual.uuid,
-  userId: casual.uuid,
-  clubId: casual.clubId,
+  userId,
+  clubId,
   hoursOfMeeting: casual.hoursOfMeeting,
   hoursOfWork: casual.hoursOfWork,
   rating: casual.rating,
   comments: casual.comments,
 }))
 
-const usersData = []
+const evaluationsData = []
 
-for (let i = 0; i < 10; ++i) {
-  usersData.push(casual.users())
+for (let i = 0; i < 20; ++i) {
+  const clubId = casual.random_element(clubsData).id
+  const userId = casual.random_element(usersData).id
+  evaluationsData.push(casual.evaluation({ clubId, userId }))
 }
 
-module.exports = usersData
+module.exports = evaluationsData

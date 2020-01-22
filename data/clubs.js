@@ -6,7 +6,7 @@ casual.define('club', () => ({
   email: casual.email,
   website: casual.url,
   size: casual.random_element(['SMALL', 'MEDIUM', 'LARGE']),
-  summary: casual.sentences,
+  summary: casual.sentences(),
   competitiveness: casual.random_element(['COMPETITIVE', 'COMPLETION']),
 }))
 
@@ -14,7 +14,7 @@ casual.define('club', () => ({
 const clubsData = []
 
 for (let i = 0; i < 20; ++i) {
-  clubsData.push(casual.club())
+  clubsData.push(casual.club)
 }
 
 module.exports = clubsData
