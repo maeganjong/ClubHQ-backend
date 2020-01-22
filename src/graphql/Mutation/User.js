@@ -1,5 +1,6 @@
-const Club = require('../../models/Club')
+const User = require('../../models/User')
 const { hashPassword, comparePassword, createToken } = require('../../lib/auth')
+
 const addUser = async (obj, { input }) => {
   const users = await User.query().insert(input).returning('*')
 
@@ -15,7 +16,7 @@ const login = async (obj, { email, password }) => {
     throw new Error('Invalid email or password')
   }
 
-  const isValidPassword = await comparePassword(password, users.password)
+  const isValidPassword = await comparePassword(password, user.password)
 
   if (!isValidPassword) {
     throw new Error('Invalid pass.')
@@ -29,7 +30,9 @@ const login = async (obj, { email, password }) => {
   return { token, user }
 }
 
-const register = async (obj, { input: { email, password } }) => {
+const register = async (obj, {
+  email, password, firstName, lastName, classYear,
+}) => {
   const emailExists = await User.query().findOne({ email })
   if (emailExists) {
     throw new Error('Email is already in use.')
@@ -38,7 +41,10 @@ const register = async (obj, { input: { email, password } }) => {
   const passwordHash = await hashPassword(password)
   const user = await User.query().insertAndFetch({
     email,
-    password: passwordHash,
+    passHash: passwordHash,
+    firstName,
+    lastName,
+    classYear,
   })
 
   const payload = {
