@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:9000",
   "name": "bootcamp-backend-starter",
   "version": "1.0.0",
   "private": true,
@@ -33,6 +34,7 @@
   "dependencies": {
     "apollo-server-express": "^2.9.12",
     "bcrypt": "^3.0.7",
+    "body-parser": "^1.19.0",
     "casual": "^1.6.2",
     "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
@@ -48,6 +50,7 @@
     "morgan": "^1.9.1",
     "objection": "^2.1.2",
     "pg": "^7.14.0",
+    "stripe": "^8.4.1",
     "uuidv4": "^6.0.0"
   }
 }
