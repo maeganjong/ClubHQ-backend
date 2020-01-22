@@ -32,7 +32,7 @@ module.exports = gql`
     website: String
     size: Size
     summary: String!
-    comp: Competitiveness
+    competitiveness: Competitiveness
 
   }
 
@@ -71,7 +71,7 @@ module.exports = gql`
   }
   
   enum Competitiveness{
-    COMPETITVE
+    COMPETITIVE
     COMPLETION
   }
 
@@ -100,7 +100,7 @@ input AddTagInput{
 }
 
 input AddTagToClubInput{
-	tagId: ID!
-	clubId: ID!
+	  tagId: ID!
+	  clubId: ID!
 }
 `

@@ -7,12 +7,12 @@ const allClubs = async () => {
 }
 
 const getClub = async (obj, { clubId }) => {
-    const club = await Club.query().findById(
-        clubId,
-    )
+  const club = await Club.query().findById(
+    clubId,
+  )
 
-    return club
-  }
+  return club
+}
 
 const searchClubs = async (obj, { input }) => {
   const clubs = await Club.query()
@@ -21,26 +21,24 @@ const searchClubs = async (obj, { input }) => {
   return clubs
 }
 
-const getTagsOfClub = async(obj, { clubId }) =>{
-    const club = await Club.query().findById(
-        clubId
-    )
+const getTagsOfClub = async (obj, { clubId }) => {
+  const club = await Club.query().findById(
+    clubId,
+  )
 
-    const tags = club.$relatedquery('tags')
+  const tags = club.$relatedquery('tags')
 
-    return tags
-    
+  return tags
 }
 
-const getEvaluationsOfClub = async(obj, { clubId }) =>{
-    const club = await Club.query().findById(
-        clubId
-    )
+const getEvaluationsOfClub = async (obj, { clubId }) => {
+  const club = await Club.query().findById(
+    clubId,
+  )
 
-    const evaluations = club.$relatedquery('evaluations')
+  const evaluations = club.$relatedquery('evaluations')
 
-    return evaluations
-    
+  return evaluations
 }
 
 
