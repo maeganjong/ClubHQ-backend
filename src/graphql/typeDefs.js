@@ -42,7 +42,7 @@ module.exports = gql`
     lastName: String!
     email: String!
     classYear: String!
-    password: String!
+    passHash: String!
     classYear: String!
   }
 
