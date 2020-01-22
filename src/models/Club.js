@@ -1,4 +1,4 @@
-const { BelongsToManyRelation } = require('objection')
+const { HasManyRelation, ManyToManyRelation } = require('objection')
 const BaseModel = require('./BaseModel')
 
 class Club extends BaseModel {
@@ -12,7 +12,7 @@ class Club extends BaseModel {
 
     return {
       tag: {
-        relation: BelongsToManyRelation,
+        relation: ManyToManyRelation,
         modelClass: Tag,
         join: {
           from: 'clubs.id',
@@ -20,15 +20,15 @@ class Club extends BaseModel {
             from: 'tagClubs.clubId',
             to: 'tagClubs.tagId',
           },
-          to: 'tags.Id',
+          to: 'tags.id',
         },
       },
-      evaluation: {
-        relation: BelongsToManyRelation,
+      evaluations: {
+        relation: HasManyRelation,
         modelClass: Evaluation,
         join: {
-          from: 'evaluations.clubId',
-          to: 'clubs.id',
+          from: 'clubs.id',
+          to: 'evaluations.clubId',
         },
       },
 

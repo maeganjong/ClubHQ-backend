@@ -12,7 +12,7 @@ module.exports = gql`
     searchTags(input:String!): [Tag]!
     getTagsOfClub(clubId: ID!): [Tag]!
     allTags: [Tag]!
-    searchClubsByTag(input:String!):[Club]!
+    searchClubsByTag(tagId:ID!):[Club]!
        
   }
 
@@ -42,7 +42,7 @@ module.exports = gql`
     lastName: String!
     email: String!
     password: String!
-
+    classYear: String!
   }
 
   type Evaluation{

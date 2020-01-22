@@ -16,7 +16,7 @@ class Evaluation extends BaseModel {
         modelClass: Club,
         join: {
           from: 'evaluations.id',
-          to: 'clubs.Id',
+          to: 'clubs.id',
         },
       },
       user: {
