@@ -14,12 +14,12 @@ class Tag extends BaseModel {
         relation: BelongsToManyRelation,
         modelClass: Club,
         join: {
-          from: 'tag.id',
+          from: 'tags.id',
           through: {
             from: 'tagClubs.tagId',
             to: 'tagClubs.clubId',
           },
-          to: 'club.Id',
+          to: 'clubs.Id',
         },
       },
 

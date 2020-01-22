@@ -26,7 +26,7 @@ const getTagsOfClub = async (obj, { clubId }) => {
     clubId,
   )
 
-  const tags = club.$relatedquery('tags')
+  const tags = club.$relatedQuery('tags')
 
   return tags
 }
@@ -36,7 +36,7 @@ const getEvaluationsOfClub = async (obj, { clubId }) => {
     clubId,
   )
 
-  const evaluations = club.$relatedquery('evaluations')
+  const evaluations = club.$relatedQuery('evaluations')
 
   return evaluations
 }
