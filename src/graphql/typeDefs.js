@@ -19,7 +19,7 @@ module.exports = gql`
   type Mutation{
     addClub(input: AddClubInput!): Club!
     addEvaluation(input: AddEvaluationInput!): Evaluation!
-    register(email:String!, password:String!): AuthReturn!
+    register(email:String!, password:String!,firstName: String!,lastName: String!, classYear: String!): AuthReturn!
     login(email:String!, password: String!): AuthReturn!
     addTag(input:AddTagInput!): Tag!
     addTagToClub(tagId: ID!, clubId: ID!):Tag!
@@ -41,6 +41,7 @@ module.exports = gql`
     firstName: String!
     lastName: String!
     email: String!
+    classYear: String!
     password: String!
     classYear: String!
   }

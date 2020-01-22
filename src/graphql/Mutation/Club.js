@@ -3,7 +3,6 @@ const Club = require('../../models/Club')
 const addClub = async (obj, { input }) => {
   console.log('THIS IS MY INPT!!', input)
   const clubs = await Club.query().insert(input)
-  console.log('SUCCESS')
 
   return clubs
 }
