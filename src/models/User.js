@@ -3,7 +3,7 @@ const BaseModel = require('./BaseModel')
 
 class User extends BaseModel {
   static get tableName() {
-    return 'user'
+    return 'users'
   }
 
   static get relationMappings() {
