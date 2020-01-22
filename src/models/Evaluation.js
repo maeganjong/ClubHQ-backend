@@ -15,16 +15,16 @@ class Evaluation extends BaseModel {
         relation: BelongsToOneRelation,
         modelClass: Club,
         join: {
-          from: 'evaluation.id',
-          to: 'club.Id',
+          from: 'evaluations.id',
+          to: 'clubs.Id',
         },
       },
       user: {
         relation: BelongsToOneRelation,
         modelClass: User,
         join: {
-          from: 'evaluation.userId',
-          to: 'user.id',
+          from: 'evaluations.userId',
+          to: 'users.id',
         },
       },
     }

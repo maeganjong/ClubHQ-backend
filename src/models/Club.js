@@ -15,20 +15,20 @@ class Club extends BaseModel {
         relation: BelongsToManyRelation,
         modelClass: Tag,
         join: {
-          from: 'club.id',
+          from: 'clubs.id',
           through: {
             from: 'tagClubs.clubId',
             to: 'tagClubs.tagId',
           },
-          to: 'tag.Id',
+          to: 'tags.Id',
         },
       },
       evaluation: {
         relation: BelongsToManyRelation,
         modelClass: Evaluation,
         join: {
-          from: 'evaluation.clubId',
-          to: 'club.id',
+          from: 'evaluations.clubId',
+          to: 'clubs.id',
         },
       },
 

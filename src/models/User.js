@@ -14,8 +14,8 @@ class User extends BaseModel {
         relation: BelongsToManyRelation,
         modelClass: Evaluation,
         join: {
-          from: 'evaluation.userId',
-          to: 'user.id',
+          from: 'evaluations.userId',
+          to: 'users.id',
         },
       },
     }
