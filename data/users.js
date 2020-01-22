@@ -12,4 +12,8 @@ casual.define('user', () => ({
 
 const usersData = []
 
+for (let i = 0; i < 20; ++i) {
+  usersData.push(casual.user)
+}
+
 module.exports = usersData

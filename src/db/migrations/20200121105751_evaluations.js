@@ -14,6 +14,8 @@ exports.up = knex => knex.schema.createTable('evaluations', table => {
   table
     .uuid('clubId')
     .references('clubs.id')
+    .onDelete('CASCADE')
+    .onUpdate('CASCADE')
 
   table.string('hoursOfMeeting')
 
@@ -22,12 +24,6 @@ exports.up = knex => knex.schema.createTable('evaluations', table => {
   table.string('rating')
 
   table.string('comments')
-
-  table
-    .uuid('clubId')
-    .references('clubs.id')
-    .onDelete('CASCADE')
-    .onUpdate('CASCADE')
 
   table.timestamp('createdAt').defaultTo(knex.fn.now())
   table.timestamp('updatedAt').defaultTo(knex.fn.now())

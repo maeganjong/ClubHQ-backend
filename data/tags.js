@@ -8,4 +8,8 @@ casual.define('tag', () => ({
 
 const tagsData = []
 
+for (let i = 0; i < 20; ++i) {
+  tagsData.push(casual.tag)
+}
+
 module.exports = tagsData
