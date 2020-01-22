@@ -10,6 +10,8 @@ module.exports = gql`
     allUsers: [User!]!
     getUser(userId: ID!): User!
     searchTags(input:String!): [Tag]!
+    getTagsOfClub(clubId: ID!): [Tag]!
+    allTags: [Tag]!
     searchClubsByTag(input:String!):[Club]!
        
   }

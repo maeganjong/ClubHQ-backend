@@ -1,5 +1,5 @@
 const { decodeToken } = require('../lib/auth')
-const Author = require('../models/Author')
+const User = require('../models/User')
 // The method exported here sets the context for all resolvers and refreshes tokens
 module.exports = async ({ req, res }) => {
   if (req.body.operationName === 'login'
@@ -15,9 +15,9 @@ module.exports = async ({ req, res }) => {
 
   try {
     const { id } = decodeToken(token)
-    const author = await Author.query().findById(id)
+    const user = await User.query().findById(id)
     return ({
-      req, res, author,
+      req, res, user,
     })
   } catch (err) {
     return ({ req, res })
