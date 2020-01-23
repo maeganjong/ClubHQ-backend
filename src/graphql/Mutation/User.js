@@ -16,10 +16,10 @@ const login = async (obj, { email, password }) => {
     throw new Error('Invalid email or password')
   }
 
-  const isValidPassword = await comparePassword(password, user.password)
+  const isValidPassword = await comparePassword(password, user.passHash)
 
   if (!isValidPassword) {
-    throw new Error('Invalid pass.')
+    throw new Error('Invalid password.')
   }
 
   const payload = {
@@ -27,6 +27,7 @@ const login = async (obj, { email, password }) => {
   }
 
   const token = createToken(payload)
+  console.log(token)
   return { token, user }
 }
 
