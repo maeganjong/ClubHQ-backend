@@ -43,7 +43,6 @@ module.exports = gql`
     email: String!
     classYear: String!
     passHash: String!
-    classYear: String!
   }
 
   type Evaluation{
