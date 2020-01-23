@@ -9,7 +9,7 @@ casual.define('evaluation', ({ clubId, userId }) => ({
   clubId,
   hoursOfMeeting: casual.hoursOfMeeting,
   hoursOfWork: casual.hoursOfWork,
-  rating: casual.rating,
+  rating: casual.integer(0, 10),
   comments: casual.comments,
 }))
 

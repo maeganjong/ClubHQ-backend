@@ -1,4 +1,5 @@
 const User = require('../../models/User')
+const { UserInputError } = require('apollo-server-express')
 const { hashPassword, comparePassword, createToken } = require('../../lib/auth')
 
 const addUser = async (obj, { input }) => {
@@ -25,6 +26,7 @@ const login = async (obj, { email, password }) => {
   const payload = {
     id: user.id,
   }
+
 
   const token = createToken(payload)
   console.log(token)

@@ -7,19 +7,18 @@ const allUsers = async () => {
 }
 
 const getUser = async (obj, { userId }) => {
-    const user = await User.query().findById(
-        userId,
-    )
+  const user = await User.query().findById(
+    userId,
+  )
 
-    return user
-  }
+  return user
+}
 
-  const resolver = {
-    Query: {
-      allUsers,
-      getUser,
-    },
-  }
-  
-  module.exports = resolver
-  
+const resolver = {
+  Query: {
+    allUsers,
+    getUser,
+  },
+}
+
+module.exports = resolver

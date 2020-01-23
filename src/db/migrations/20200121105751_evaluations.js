@@ -21,7 +21,7 @@ exports.up = knex => knex.schema.createTable('evaluations', table => {
 
   table.string('hoursOfWork')
 
-  table.string('rating')
+  table.integer('rating')
 
   table.string('comments')
 

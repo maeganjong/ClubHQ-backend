@@ -31,6 +31,7 @@ module.exports = gql`
     email: String
     website: String
     size: Size
+    avgRating: Float
     summary: String!
     competitiveness: Competitiveness
 
