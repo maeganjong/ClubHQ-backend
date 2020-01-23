@@ -1,5 +1,6 @@
 const Club = require('../../models/Club')
 const TagClub = require('../../models/TagClub')
+const Evaluation = require('../../models/Evaluation')
 
 const allClubs = async () => {
   const clubs = await Club.query()
@@ -48,6 +49,14 @@ const searchClubsByTag = async (obj, { tagId }) => {
   return clubs
 }
 
+const avgRating = async ({ id }) => {
+  const avg = await Evaluation.query()
+    .avg('rating')
+    .where('clubId', '=', id)
+  const avg2 = avg[0].avg
+  console.log(avg2)
+  return avg2
+}
 
 const resolver = {
   Query: {
@@ -57,6 +66,9 @@ const resolver = {
     getTagsOfClub,
     getEvaluationsOfClub,
     searchClubsByTag,
+  },
+  Club: {
+    avgRating,
   },
 }
 
