@@ -54,23 +54,11 @@ const avgRating = async ({ id }) => {
   const avg = await Evaluation.query()
     .avg('rating')
     .where('clubId', '=', id)
-  const avg2 = avg[0].avg
-  console.log(avg2)
-  return avg2
+  const avg2 = Math.round(avg[0].avg *1000)
+  const avg3 = avg2 / 1000
+  console.log(avg3)
+  return avg3
 }
-
-/*const topRated = async ({ id }) => {
-  const clubs = await Club.query()
-    .select(['clubs.*',
-      Evaluation.query()
-        .where('clubId', ref('clubs.id'))
-        .avg('rating')
-        .as('avgRating'),
-    ])
-    .orderBy('avgRating')
-
-  return clubs
-}*/
 
 const resolver = {
   Query: {
