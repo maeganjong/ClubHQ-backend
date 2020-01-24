@@ -48,7 +48,6 @@ module.exports = gql`
 
   type Evaluation{
     id: ID!
-    userId: ID!
     clubId: ID!
     hoursOfMeeting: Int
     hoursOfWork: Int

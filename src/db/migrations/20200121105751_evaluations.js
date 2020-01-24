@@ -6,12 +6,6 @@ exports.up = knex => knex.schema.createTable('evaluations', table => {
     .defaultTo(knex.raw('uuid_generate_v4()'))
 
   table
-    .uuid('userId')
-    .references('users.id')
-    .onDelete('CASCADE')
-    .onUpdate('CASCADE')
-
-  table
     .uuid('clubId')
     .references('clubs.id')
     .onDelete('CASCADE')
