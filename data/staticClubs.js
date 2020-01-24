@@ -69,7 +69,7 @@ const data = [
     website: 'http://www.hcs.harvard.edu/~seds/',
     size: 'SMALL',
     summary: 'Students for the Exploration and Discovery of Space: currently designing a satellite',
-    competitiveness: 'N/A',
+    competitiveness: 'COMPLETION',
   },
 
   {
