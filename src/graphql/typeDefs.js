@@ -54,7 +54,7 @@ module.exports = gql`
     hoursOfMeeting: Int
     hoursOfWork: Int
     rating: Int
-    comments: String!
+    comments: String
 
   }
   type Tag{
