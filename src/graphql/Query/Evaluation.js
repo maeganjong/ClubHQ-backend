@@ -6,16 +6,16 @@ const allEvaluations = async () => {
   return evaluations
 }
 
-//const averageRatings = async () => {
+// const averageRatings = async () => {
 //  const ratings = await Evaluation.query()
- //   .select('clubId', 'avg')
-  //  .groupBy('clubId')
-  //  .avg('rating')
+//   .select('clubId', 'avg')
+//  .groupBy('clubId')
+//  .avg('rating')
 
 
- // console.log(ratings)
+// console.log(ratings)
 //  return ratings
-//}
+// }
 
 const resolver = {
   Query: {
