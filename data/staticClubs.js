@@ -24,7 +24,7 @@ const data = [
     website: 'https://www.hmmt.co',
     size: 'SMALL',
     summary: 'Weekly group gatherings to make art. (Supplies provided)',
-    competitiveness: 'N/A',
+    competitiveness: 'COMPLETION',
   },
 
   {

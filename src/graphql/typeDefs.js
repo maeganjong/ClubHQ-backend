@@ -13,6 +13,7 @@ module.exports = gql`
     getTagsOfClub(clubId: ID!): [Tag]!
     allTags: [Tag]!
     searchClubsByTag(tagId:ID!):[Club]!
+    topRated: [Club]!
        
   }
 

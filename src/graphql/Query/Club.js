@@ -1,3 +1,4 @@
+const { ref } = require('objection')
 const Club = require('../../models/Club')
 const TagClub = require('../../models/TagClub')
 const Evaluation = require('../../models/Evaluation')
@@ -57,6 +58,19 @@ const avgRating = async ({ id }) => {
   console.log(avg2)
   return avg2
 }
+
+/*const topRated = async ({ id }) => {
+  const clubs = await Club.query()
+    .select(['clubs.*',
+      Evaluation.query()
+        .where('clubId', ref('clubs.id'))
+        .avg('rating')
+        .as('avgRating'),
+    ])
+    .orderBy('avgRating')
+
+  return clubs
+}*/
 
 const resolver = {
   Query: {
