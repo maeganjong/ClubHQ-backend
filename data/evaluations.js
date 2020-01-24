@@ -8,7 +8,7 @@ casual.define('evaluation', ({ clubId }) => ({
   hoursOfMeeting: casual.hoursOfMeeting,
   hoursOfWork: casual.hoursOfWork,
   rating: casual.integer(0, 10),
-  comments: casual.comments,
+  comments: casual.sentence,
 }))
 
 const evaluationsData = []
