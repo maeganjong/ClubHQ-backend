@@ -87,7 +87,6 @@ module.exports = gql`
   }
 
   input AddEvaluationInput{
-    userId: ID!
     clubId: ID!
     hoursOfMeeting: Int
     hoursOfWork: Int
