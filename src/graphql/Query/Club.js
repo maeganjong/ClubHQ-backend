@@ -56,9 +56,28 @@ const avgRating = async ({ id }) => {
     .where('clubId', '=', id)
   const avg2 = Math.round(avg[0].avg *1000)
   const avg3 = avg2 / 1000
+  return avg3
+}
+
+const avgMeeting = async ({ id }) => {
+  const avg = await Evaluation.query()
+    .avg('hoursOfMeeting')
+    .where('clubId', '=', id)
+  const avg2 = Math.round(avg[0].avg *1000)
+  const avg3 = avg2 / 1000
+  return avg3
+}
+
+const avgWorking = async ({ id }) => {
+  const avg = await Evaluation.query()
+    .avg('hoursOfWorking')
+    .where('clubId', '=', id)
+  const avg2 = Math.round(avg[0].avg *1000)
+  const avg3 = avg2 / 1000
   console.log(avg3)
   return avg3
 }
+
 
 const resolver = {
   Query: {
@@ -71,6 +90,8 @@ const resolver = {
   },
   Club: {
     avgRating,
+    avgMeeting,
+    avgWorking,
   },
 }
 
