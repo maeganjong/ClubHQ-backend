@@ -14,6 +14,7 @@ module.exports = gql`
     allTags: [Tag]!
     searchClubsByTag(tagId:ID!):[Club]!
     search(input:String):[SearchResult]!
+    topRated: [Club]!
        
   }
 
@@ -49,7 +50,6 @@ module.exports = gql`
 
   type Evaluation{
     id: ID!
-    userId: ID!
     clubId: ID!
     hoursOfMeeting: Int
     hoursOfWork: Int
