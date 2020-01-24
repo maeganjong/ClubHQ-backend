@@ -13,6 +13,7 @@ module.exports = gql`
     getTagsOfClub(clubId: ID!): [Tag]!
     allTags: [Tag]!
     searchClubsByTag(tagId:ID!):[Club]!
+    search(input:String):[SearchResult]!
        
   }
 
@@ -104,4 +105,6 @@ input AddTagToClubInput{
 	  tagId: ID!
 	  clubId: ID!
 }
+
+union SearchResult = Club | Tag
 `
