@@ -9,14 +9,14 @@ exports.up = knex => knex.schema.createTable('clubs', table => {
 
   table.string('email')
 
-  table.string('website').unique()
+  table.string('website')
 
   table
     .enum('size', ['SMALL', 'MEDIUM', 'LARGE'])
     .notNullable()
     .defaultTo('MEDIUM')
 
-  table.string('summary')
+  table.text('summary')
 
   table
     .enum('competitiveness', ['COMPETITIVE', 'COMPLETION', 'N/A'])
