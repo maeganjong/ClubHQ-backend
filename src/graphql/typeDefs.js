@@ -34,6 +34,8 @@ module.exports = gql`
     website: String
     size: Size
     avgRating: Float
+    avgMeeting: Float
+    avgWorking: Float
     summary: String!
     competitiveness: Competitiveness
 
