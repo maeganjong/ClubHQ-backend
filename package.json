@@ -45,7 +45,7 @@
     "graphql-tools": "^4.0.6",
     "helmet": "^3.21.2",
     "jsonwebtoken": "^8.5.1",
-    "knex": "^0.20.2",
+    "knex": "^2.4.0",
     "lodash.merge": "^4.6.2",
     "morgan": "^1.9.1",
     "objection": "^2.1.2",
